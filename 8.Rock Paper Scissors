@@ -1,0 +1,39 @@
+#https://www.practicepython.org/exercise/2014/03/26/08-rock-paper-scissors.html
+
+import os
+import random
+
+
+choices = ["Rock","Paper", "Scissors"]
+game = "Go on"
+while game == "Go on":
+    print("Your Turn!")
+    print("1.Rock 2.Paper 3.Scissors") 
+    player = int(input("Your choice:"))
+    play_choice = choices[player-1]
+    print("Computer's turn")
+    time.sleep(1)
+    computer = random.randint(1,3)
+    computer_choice = choices[computer-1]
+    #Posibilities for player
+    if play_choice == computer_choice:
+        print("\n Draw!")
+    elif play_choice == "Rock" and computer_choice == "Scissors":
+        print("\n You win, beacuse rock beats scissors")
+    elif play_choice == "Paper" and computer_choice == "Rock":
+        print("\n You win, beacuse paper beats rock")
+    elif play_choice == "Scissors" and computer_choice == "Paper":
+        print("\n You win, beacuse scissors beats paper")
+    #Posibilites for computer
+    elif computer_choice == "Rock" and play_choice == "Scissors":
+        print("\n Computer wins, beacuse rock beats scissors")
+    elif computer_choice == "Paper" and play_choice == "Rock":
+        print("\n Computer wins, beacuse paper beats rock")
+    elif computer_choice == "Scissors" and play_choice == "Paper":
+        print("\n Computer wins, beacuse scissors beats paper")
+    finish = input("\n Do u want to finish the game? y/n:")
+    if finish == "n":
+        os.system("CLS")
+        game = "Go on"
+    if finish =="y":
+        exit()
