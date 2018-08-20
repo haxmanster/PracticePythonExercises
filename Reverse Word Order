@@ -10,3 +10,9 @@ sen_list = sentence.split(' ')
 sen_list = sen_list[::-1]
 
 print(' '.join(sen_list))
+####################### HAxmanster ################
+def reverse(text):
+    text = [text]
+    for i in reversed(text):
+        return i[::-1]
+    return
